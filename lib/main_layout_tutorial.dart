@@ -10,7 +10,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //1 Linha com titulo, subtítulo e estrela
+
+    ///1 Linha com titulo, subtítulo e estrela
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32.0),
       child: Row(
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    //2 Funcao que monta o botao
+    ///2 Funcao que monta os botões
     Column buildButtonColumn(IconData icon, String label) {
       Color color = Theme.of(context).primaryColor;
 
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
       );
     }
 
-    //2.1 criando os botoes e adicionando na linha
+    ///2.1 criando os botoes e adicionando na linha
     Widget buttonSection = Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -82,7 +83,7 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    //3 texto de descricao
+    ///3 texto de descricao
     Widget textSection = Container(
       padding: const EdgeInsets.all(32.0),
       child: Text(
@@ -93,7 +94,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
       ),
     );
 
-    //Juntando tudo
+    ///Juntando tudo
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
