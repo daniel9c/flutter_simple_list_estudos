@@ -15,6 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //Criando um MaterialApp.
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
+        accentColor: Colors.cyan,
+        brightness: Brightness.light
+      ),
       //Setando o como parametro home um novo Scaffold, que implementa o básico da estrutura de uma tela com material design
       home: Scaffold(
         //Cria um app bar dentro do Scaffold
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
           title: Text('Titulo EasyListttt'),
         ),
         //Cria um Body dentro do Scaffold
-        body: ProductManager(),
+        body: ProductManager(startingProduct: 'Daniel Teste'),
       ),
     );
   }

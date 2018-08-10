@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-//https://flutter.io/tutorials/layout/
+import './favorite_widget_layout_tutorial.dart';
+
+///links base
+///https://flutter.io/tutorials/layout/
+///https://flutter.io/tutorials/interactive/
 
 void main() {
-  //debugPaintSizeEnabled = true;
+  //show the design lines
+  debugPaintSizeEnabled = false;
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -38,18 +45,17 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          Text('41'),
+
+          //Componente de favorito customizado do arquivo favorite_widget_layout_tutorial.dat
+          FavoriteWidget(),
+
         ],
       ),
     );
 
     ///2 Funcao que monta os botões
     Column buildButtonColumn(IconData icon, String label) {
-      Color color = Theme.of(context).primaryColor;
+      Color color = Theme.of(context).accentColor;
 
       return Column(
         mainAxisSize: MainAxisSize.min,
@@ -94,9 +100,16 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
       ),
     );
 
+
     ///Juntando tudo
     return MaterialApp(
       title: 'Flutter Demo',
+      //theme: ThemeData.dark(),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: Colors.lightBlue[600],
+        accentColor: Colors.deepPurple[600],
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Top Lakes'),
